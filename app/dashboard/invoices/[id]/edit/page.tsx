@@ -3,13 +3,22 @@ import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
 import { fetchInvoiceById, fetchCustomers } from "@/app/lib/data";
 import { notFound } from "next/navigation";
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const { id } = params; // Destructure the ID from params
+export default async function Page({
+  params,
+  searchParams,
+}: {
+  params: { id: string };
+  searchParams?: { query?: string; page?: string };
+}) {
+  const { id } = params; // Extract the ID from params
+
+  // Fetch data for the invoice and customers
   const [invoice, customers] = await Promise.all([
     fetchInvoiceById(id),
     fetchCustomers(),
   ]);
 
+  // If the invoice is not found, return a 404
   if (!invoice) {
     notFound();
   }
