@@ -17,11 +17,11 @@ export default function Page() {
           <p
             className={`${lusitana.className} text-xl text-gray-800 md:text-3xl md:leading-normal`}
           >
-            <strong>Welcome to Acme.</strong> This is the example for the{" "}
+            <strong>Welcome to shambaLink.</strong> Connecting farmers with markets,training,opportunities{" "}
             <a href="https://nextjs.org/learn/" className="text-blue-500">
-              Next.js Learn Course
+              shambaLink
             </a>
-            , brought to you by Vercel.
+            , brought to you by Dorine Okowo.
           </p>
           <Link
             href="/login"
@@ -33,9 +33,11 @@ export default function Page() {
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           {/* Add Hero Images Here */}
           <Image
-            src="/hero-desktop.png"
+            src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsX29mZmljZV8zNV9waG90b19vZl9oYXBweV9hZnJpY2FuX2FtZXJpY2FuX3dvbWFuX2hhcnZlc181NmU4MWU4YS1kOWY3LTQ5M2QtYWY5ZS1mN2Y0OTNhNmNlMjdfMS5qcGc.jpg"
             width={1000}
             height={760}
+            priority
+            sizes="(min-width: 768px) 100vw, 50vw"
             className="hidden md:block"
             alt="Screenshots of the dashboard project showing desktop version"
           />
@@ -43,6 +45,8 @@ export default function Page() {
             src="/hero-mobile.png"
             width={560}
             height={620}
+            priority
+            sizes="(max-width: 767px) 100vw, 50vw"
             className="block md:hidden"
             alt="Screenshots of the dashboard project showing mobile version"
           />
